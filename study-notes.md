@@ -34,8 +34,11 @@ All variables have assigned types (explicitly or implicitly).
 - In a Go file, the first line is the package declaration. Go imports whole packages.
 - Don't forget the semi-colon insertion rule
 - Go assigns a zero value to any variable that is declared but not assigned a value
-- A Go literal is an explicitly specified number, char, or string. Go programs have four common and a fifth kind of literals.
+- A Go literal is an explicitly specified number, char, or string. Go programs have four common and a fifth kind of literals. Literals are considered untyped. There are situation when the type isn't explicitly declared - in those cases, Go uses the default type for a  literal. 
   - Integer literal: a sequence of numbers. Base 10 by default, but different prefixes are used to indicate other bases: 0b for binary (base 2), 0o for octal (base 8), or 0x for hexa (base 16). You can use underscorer to make long ints easier to read.
+  - Floating point literal: can have an exponent specified with the letter e and a positive or negative number (6.03e23). You can write them in hexadecimal by using the 0x prefix and the letter p for indicating any exponent (0x12.34p5 = 582.5 in base 10)
+  - Rune literal: represents a character and is surrounded by single quotes. Signle and double quotes are not interchangeable. Rune literals cam be written as single unicode haracters ('a'), 8-bit octal numbers ('\141'), 8-bit hexadecimal numbers ('\x61), 16-bit hexadecimal ('\u0061'), 32-bit unicode characters ('\U00000061')
+  - String literals: double quotes to create an interpreted string. These contain zero or more rune literals. Interpreted, because they interpret rune literals into single characters. If you need backslashes, double quotes or newlines in your string, use a raw string literal, which is delimited by backticks (`).
 
 ---
 
