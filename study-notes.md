@@ -30,6 +30,13 @@ All variables have assigned types (explicitly or implicitly).
   - `panic(error)` // stops execution, displays error message
   - `recover` // manages behaviour of a panicking goroutine
 
+- A Go project is called a module. A moduel is not just a source code, it is also a specification of the dependencies of the code within the module. Every module has a `go.mod` file in its root. `go mod init` to create this file which you shouldn't edit manually.
+- In a Go file, the first line is the package declaration. Go imports whole packages.
+- Don't forget the semi-colon insertion rule
+- Go assigns a zero value to any variable that is declared but not assigned a value
+- A Go literal is an explicitly specified number, char, or string. Go programs have four common and a fifth kind of literals.
+  - Integer literal: a sequence of numbers. Base 10 by default, but different prefixes are used to indicate other bases: 0b for binary (base 2), 0o for octal (base 8), or 0x for hexa (base 16). You can use underscorer to make long ints easier to read.
+
 ---
 
 go mod init <module-name> // kinda like cargo new
