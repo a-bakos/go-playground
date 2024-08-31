@@ -48,9 +48,9 @@ Integer types - zero value for all is 0
 | ---- | -----------
 | int8 | -128 to 127
 | int16 | -32768 to 32767
-| int32 | -2147483648 to 2147483647
+| int32 (alias: rune) | -2147483648 to 2147483647
 | int64 | -9223372036854775808 to 92233720368544775807
-| uint8 (byte) | 0 to 255
+| uint8 (alias: byte) | 0 to 255
 | uint16 | 0 to 65535
 | uint32 | 0 to 4294967295
 | uint64 | 0 to 18446744093909551615
@@ -68,12 +68,26 @@ Follow 3 rules:
 - if you're writing a library function that should work with any integer type, take advantage of Go's generic support and use a generic type parameter to represent any integer type
 - in all other cases just use int
 
-FLoating point types
+FLoating point types - IEEE754 specification
+
+Unless you have to be compatible with an existing format, use float64. Floating point literals have a default type of float64 so always using float64 is the simplest option. A float32 has only six- or seven digits of precision. If you need to work out the difference in memory size, use the profiler.
 
 | Type name | Largest absolute value | Smallest nonzero absolute value
 |---------- | ---------------------- | -------------------------------
 | float32 | 3.40282346638528859811704183484516925440e+38 | 1.401298464324817070923729583289916131280e-45
 | float64 | 1.797693134862315708145274237317043567981e+308 | 4.940656458412465441765687928682213723651e-324
+
+Strings
+
+Default zero value for a string is an empty string. Strings are concatenated by using the + operator. Strings are immutable, you can reassign the value ofa  string variable but you cannot change the value of the string that is assigned to it.
+
+Rune
+
+Represents a single code point. The rune is an alias for the int32 type. If you are reffering to a character, use the rune type, not the int32 type.
+```go
+var myFirstInitial = 'A' // the type name matches usage
+var myLastInitial = 'B' // legal, but confusing
+```
 
 ---
 
