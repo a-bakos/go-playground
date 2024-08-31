@@ -39,6 +39,41 @@ All variables have assigned types (explicitly or implicitly).
   - Floating point literal: can have an exponent specified with the letter e and a positive or negative number (6.03e23). You can write them in hexadecimal by using the 0x prefix and the letter p for indicating any exponent (0x12.34p5 = 582.5 in base 10)
   - Rune literal: represents a character and is surrounded by single quotes. Signle and double quotes are not interchangeable. Rune literals cam be written as single unicode haracters ('a'), 8-bit octal numbers ('\141'), 8-bit hexadecimal numbers ('\x61), 16-bit hexadecimal ('\u0061'), 32-bit unicode characters ('\U00000061')
   - String literals: double quotes to create an interpreted string. These contain zero or more rune literals. Interpreted, because they interpret rune literals into single characters. If you need backslashes, double quotes or newlines in your string, use a raw string literal, which is delimited by backticks (`).
+- Booleans - zero value is false: `var flag bool // no value = false`
+
+Numeric types: 12 numeric types and a few special names that are grouped into 3 categories.
+Integer types - zero value for all is 0
+
+| Type | Value Range
+| ---- | -----------
+| int8 | -128 to 127
+| int16 | -32768 to 32767
+| int32 | -2147483648 to 2147483647
+| int64 | -9223372036854775808 to 92233720368544775807
+| uint8 (byte) | 0 to 255
+| uint16 | 0 to 65535
+| uint32 | 0 to 4294967295
+| uint64 | 0 to 18446744093909551615
+
+Integer division in Go follows truncation toward zero.
+
+Special integer types: 
+- byte is an alias for uint8 (you can use it with uint8)
+- int: on 32bit CPU is a 32-bit signed integer like int32. On most 64-bit CPUs int is int64. It is a compile time error to do operation between the two of them.
+- uint: same as int but it is unsigned (values are always 0 or positive)
+- two other special names for integer types: rune and uintptr
+
+Follow 3 rules:
+- if you're working with a binary fille format or network protocol that has an integer of a specific size or sign, use the corresponding integer type
+- if you're writing a library function that should work with any integer type, take advantage of Go's generic support and use a generic type parameter to represent any integer type
+- in all other cases just use int
+
+FLoating point types
+
+| Type name | Largest absolute value | Smallest nonzero absolute value
+|---------- | ---------------------- | -------------------------------
+| float32 | todo |
+| float64 | todo |
 
 ---
 
