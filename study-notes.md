@@ -89,6 +89,11 @@ var myFirstInitial = 'A' // the type name matches usage
 var myLastInitial = 'B' // legal, but confusing
 ```
 
+Explicit type conversion
+
+Go doesn't allow automatic type promotion between variable (aka automatic conversion between different types). You must use type conversion when variable types do not match. 
+Also in Go, you cannot treat another Go type as a boolean, no truthiness in Go.
+
 ---
 
 go mod init <module-name> // kinda like cargo new
