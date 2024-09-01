@@ -14,4 +14,4 @@ CMD | DESC | MORE
 ## Other
 CMD | DESC
 --- | ---- 
-`C:\Users\<YourUser>\AppData\Local\Temp\go-build*\b*\exe\*.exe` | Wildcard disable avast nofitications after build
+`C:\Users\<YourUser>\AppData\Local\Temp\go-build*\b*\exe\*.exe` | Wildcard disable avast nofitications after build. Settings > Exceptions
