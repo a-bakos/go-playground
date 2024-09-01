@@ -10,3 +10,8 @@ CMD | DESC | MORE
 `go mod init projectname` | init module |
 `go get` | manage changes in mod file |
 `go mod tidy` | manage changes in mod file |
+
+## Other
+CMD | DESC
+--- | ---- 
+`C:\Users\<YourUser>\AppData\Local\Temp\go-build*\b*\exe\*.exe` | Wildcard disable avast nofitications after build
