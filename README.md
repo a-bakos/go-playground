@@ -2,6 +2,7 @@ CMD | DESC | MORE
 --- | ---- | ----
 `go version` | version |
 `go build` | compiler | `-o` to change binary name; `go build -o customname`
+`go build -gcflags="-m"` | compile and print out which values escape to the heap
 `go run . ` | compile + run |
 `go fmt` | code formatter | `./..` to apply to all files
 `go test` | test runner | 
